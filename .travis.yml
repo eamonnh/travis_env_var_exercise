@@ -19,5 +19,6 @@ script:
   - docker tag travis_env_var_exercise eamonnh/travis_env_var_exercise:latest
 
 after_success:
+  - echo $FAVORITE_FOOD
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push eamonnh/travis_env_var_exercise
